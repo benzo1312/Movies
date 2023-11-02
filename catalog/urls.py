@@ -4,5 +4,7 @@ from django.urls import path
 from catalog import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', views.catalog_view),
+    path('<slug:actor_slug>/', views.catalog_detail_view),
+    path('<str:cat>/<int:mov_id>/', views.movie_detail_view),
 ]
